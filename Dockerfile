@@ -1,6 +1,8 @@
 FROM ubuntu:23.10 as builder
 
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apt-get update && apt-get install -y curl
+    
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | -E bash -
 RUN apt-get install -y nodejs
 
 RUN git clone --depth=1 https://github.com/cloudtty/cloudtty && \
