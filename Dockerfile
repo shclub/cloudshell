@@ -6,7 +6,10 @@ WORKDIR /app
 RUN yarn install
 RUN yarn run build
 
+
+
 FROM ubuntu:23.10
+
 RUN apt-get update && apt-get -y install  apt-transport-https ca-certificates curl gnupg lsb-release bash git curl gettext jq vim
 
 # RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg |  gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
